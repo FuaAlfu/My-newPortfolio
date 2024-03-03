@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from './components/header';
 import {Footer} from './components/footer';
-import {aboutMeData, pages} from './data/data';
+import {aboutMeData, pages, contactMeLinks} from './data/data';
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body>
         <Header name={aboutMeData.name} pages={pages} /> 
         className={inter.className}{children}
-        <Footer />
+        <Footer contactMeLinks={}/>
       </body>
     </html>
   );

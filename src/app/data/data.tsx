@@ -68,3 +68,10 @@ export const projects = [
 ],
 },
 ];
+
+export const contactMeLinks = [
+   'example@gmail.com',
+   'twitter',
+   'github',
+   'medium'
+];

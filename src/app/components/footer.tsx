@@ -1,12 +1,25 @@
+import { type } from 'os';
 import React from 'react'
-import { Envelope, Twitter } from '../icons';
+import { Envelope, Twitter, Medium } from '../icons';
 
-export const Footer = () => {
+type FooterProps = {
+  contactMeLinks: string[];
+}
+
+export const Footer = ({contactMeLinks}: FooterProps) => {
   return (
-    <footer>
-      <div>
-          <a href={} aria-label='Email'> <Envelope className='' /> </a>
-          <a href={} aria-label='Email'> <Twitter className='' /> </a>
+    <footer className='w-full bg-white shadow-footer
+     mt-12 py-4 fixed bottom-0 '>
+      <div className='flex items-center justify-center gap-1'>
+          <a href={contactMeLinks[0]} aria-label='Email'>
+            <Envelope className='icons_contactme' /> 
+            </a>
+          <a href={contactMeLinks[1]} aria-label='Twitter'>
+          <Twitter className='' />
+          </a>
+          <a href={contactMeLinks[2]} aria-label='Medium'>  
+          <Medium className='icons_contactme' /> 
+          </a>
       </div>
     </footer>
   )

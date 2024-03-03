@@ -2,7 +2,15 @@ import React from 'react';
 import Link from "next/Link";
 import Image from "next/image"; 
 
-const Header = ({name, pages}) => {
+type HeaderProps = {
+  name: string,
+  page:{
+    id: number,
+    label: string,
+    link: string
+  }[];
+}
+const Header = ({name, pages}: HeaderProps) => {
   console.log(pages, "pages >>>");
   return (
     <header className='flex flex-col relative bg-linear-557AFF w-full h-48'>
@@ -39,7 +47,7 @@ const Header = ({name, pages}) => {
            aria-label={`Image of ${ name}`}
         />
     </header>
-  )
+  );
 }
 
 export default Header
