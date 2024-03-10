@@ -3,9 +3,10 @@ import {aboutMeData} from './data/data';
 
 const AboutMePage = () =>{
     return (
-      <main className='flex flex-col items-center'>
-          <section className='flex flex-row w-10/12 mt-10 mb-6 items-center'>
-              <div className='w-1/3'>
+      <main className='flex flex-col items-center mb-32'>
+          <section className='flex sm:flex-row sm:w-10/12 mt-10
+           mb-6 items-center flex-col w-full'>
+              <div className='sm:w-1/3 w-full flex justify-center'>
                   <Image 
                   priority={false}
                   width={640}
@@ -13,23 +14,36 @@ const AboutMePage = () =>{
                   aria-label={"Image of .."} 
                   alt={"Image of .."}
                   src={'/images/..'}
+                  className="profileImage"
                   />
               </div>
-              <div> 
-                  <h2>{aboutMeData.title}</h2>
-                  <p>{aboutMeData.body}</p>
+              <div className="ml-20 sm:w-2/3 w-full mt-6 sm:mt-0"> 
+                  <h2 className=''>{aboutMeData.title}</h2>
+                  <p className='text-base'>{aboutMeData.body}</p>
               </div>
           </section>
           {/*  */}
-          <section>
+          <section className='w-full my-8 
+          bg-blue-light p-10 h-full '>
               <p>{aboutMeData.highlightedBody}</p>
           </section>
           {/*  */}
-          <section>
-              <div>
+          <section className='flex sm:flex-row sm:w-10/12 
+          mt-10 items-center w-full flex-col'>
+              <div className='flex flex-col sm:w-7/12 w-full'>
                   <p>{aboutMeData.body2}</p>
               </div>
-              <div> Image</div>
+              <div className='sm:w-5/12 sm:ml-10 w-full ml-0'>
+                <Image 
+                  priority={false}
+                  width={500}
+                  height={250} 
+                  aria-label={"Image of .."} 
+                  alt={"Image of .."}
+                  src={'/images/..'}
+                  className="h-250 object-cover w-500"
+                />
+              </div>
           </section>
       </main>
     )
